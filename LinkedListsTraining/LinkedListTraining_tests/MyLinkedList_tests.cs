@@ -15,7 +15,7 @@ namespace LinkedListTraining_tests
         public void AddAtHead_OneNumber_CanReturnNumber()
         {
             var input = 2;
-            var expected = 0;
+            var expected = 2;
             var sut = new MyLinkedList();
 
             sut.AddAtHead(input);

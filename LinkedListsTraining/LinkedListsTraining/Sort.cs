@@ -24,14 +24,39 @@ namespace LinkedListsTraining
             }
         }
 
-        public static int[] Selection(int[] arr)
+        public static void Selection(int[] arr)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < arr.Length; i++)
+            {
+                int lowest = i;
+                for (var k = i + 1; k < arr.Length; k++)
+                {
+                    if (arr[k] < arr[lowest])
+                    {
+                        lowest = k;
+                    }
+                }
+                int temp = arr[i];
+                arr[i] = arr[lowest];
+                arr[lowest] = temp;
+            }
         }
 
         public static void Insertion(int[] arr)
         {
-            throw new NotImplementedException();
+            int i = 1;
+            while (i < arr.Length)
+            {
+                int j = i;
+                while (j > 0 && arr[j - 1] > arr[j])
+                {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                    j = j - 1;
+                }
+                i = i + 1;
+            }
         }
 
         public static int[] MergeSort(int[] arr)
@@ -52,6 +77,35 @@ namespace LinkedListsTraining
             var combined = Combine(botOut, topOut);
 
             return combined;
+            //for(int w = 1; w < arr.Length; w= w*2)
+            //{
+            //    for(int i = 0; i < arr.Length; i = i + w)
+            //    {
+            //        for(int k = i; k < i + w && k +1 < arr.Length; k++)
+            //        {
+            //            if (arr[k] > arr[k + 1])
+            //            {
+            //                var temp = arr[k];
+            //                arr[k] = arr[k + 1];
+            //                arr[k + 1] = temp;
+            //            }
+            //        }
+            //    }
+            //}
+            /*int test = arr.Length % 2;
+            if (arr.Length%2 != 0 )
+            {
+                for (int k = 0; k < arr.Length; k++)
+                {
+                    if (arr[k] > arr[k +1])
+                    {
+                        var temp = arr[k];
+                        arr[k] = arr[k + 1];
+                        arr[k + 1] = temp;
+                    }
+                }
+            }
+            int test2 = 0;*/
         }
 
         private static int[] Combine( int[] bottom, int[] top)
