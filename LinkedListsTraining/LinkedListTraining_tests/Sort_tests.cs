@@ -114,5 +114,18 @@ namespace LinkedListTraining_tests
 
             CollectionAssert.AreEqual(arr, desired);
         }
+
+        //merge
+
+        [TestMethod]
+        public void Merge_ListWithBounds_ReturnsItemsSorted()
+        {
+            var arr = new int[] { 99999, Int32.MaxValue, Int32.MinValue, 10, 44, -1111, 0, 2, 2, 2, -1 };
+            var desired = new int[] { Int32.MinValue, -1111, -1, 0, 2, 2, 2, 10, 44, 99999, Int32.MaxValue };
+
+            var actual = Sort.MergeSort(arr);
+
+            CollectionAssert.AreEqual(actual, desired);
+        }
     }
 }
