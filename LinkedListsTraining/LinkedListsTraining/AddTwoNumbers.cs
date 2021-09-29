@@ -15,7 +15,7 @@
             {
                 carry = 0;
             }
-            runner =  new ListNode(sumFirst - carry);//create addition function??? would have to return two things???
+            runner =  new ListNode(sumFirst - carry);
             ListNode headToReturn = runner;
             carry = carry / 10;
             
